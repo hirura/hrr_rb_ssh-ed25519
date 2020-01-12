@@ -50,7 +50,7 @@ $ gem install hrr_rb_ssh-ed25519
 
 ```ruby
 require 'hrr_rb_ssh'
-require 'hrr_rb_ssh-ed25519'
+require 'hrr_rb_ssh/ed25519'
 ```
 
 Then, supported and preferred algorithm lists show `ssh-ed25519`.
