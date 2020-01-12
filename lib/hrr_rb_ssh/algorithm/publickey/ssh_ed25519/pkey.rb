@@ -4,6 +4,7 @@
 require 'stringio'
 require 'base64'
 require 'ed25519'
+require 'hrr_rb_ssh/loggable'
 
 module HrrRbSsh
   module Algorithm
@@ -13,7 +14,10 @@ module HrrRbSsh
           class Error < ::StandardError
           end
 
-          def initialize arg=nil
+          include Loggable
+
+          def initialize arg=nil, logger: nil
+            self.logger = logger
             case arg
             when ::Ed25519::SigningKey, ::Ed25519::VerifyKey
               @key = arg
@@ -46,8 +50,8 @@ module HrrRbSsh
             decoded_key_str = Base64.decode64(key_str[begin_marker.size...-end_marker.size])
             raise Error unless decoded_key_str[0,14] == magic
 
-            private_key_h = OpenSSHPrivateKey.decode decoded_key_str[15..-1]
-            private_key_content_h = OpenSSHPrivateKeyContent.decode private_key_h[:'content']
+            private_key_h = OpenSSHPrivateKey.decode decoded_key_str[15..-1], logger: logger
+            private_key_content_h = OpenSSHPrivateKeyContent.decode private_key_h[:'content'], logger: logger
             key_pair = private_key_content_h[:'key pair']
 
             ::Ed25519::SigningKey.new(key_pair[0,32])
