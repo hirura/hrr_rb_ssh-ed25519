@@ -1,15 +1,18 @@
 # coding: utf-8
 # vim: et ts=2 sw=2
 
-require 'hrr_rb_ssh/logger'
+require 'hrr_rb_ssh/loggable'
 
 module HrrRbSsh
   module Algorithm
     class Publickey
       class SshEd25519 < Publickey
+        include Loggable
+
         NAME = 'ssh-ed25519'
 
-        def initialize arg
+        def initialize arg, logger: nil
+          self.logger = logger
           begin
             new_by_key_str arg
           rescue PKey::Error
