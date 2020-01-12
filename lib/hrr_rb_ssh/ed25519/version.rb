@@ -3,6 +3,6 @@
 
 module HrrRbSsh
   module Ed25519
-    VERSION = "0.4.0.pre4"
+    VERSION = "0.4.0"
   end
 end
