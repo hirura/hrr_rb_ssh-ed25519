@@ -25,7 +25,7 @@ module HrrRbSsh
         end
 
         def new_by_public_key_blob public_key_blob
-          public_key_blob_h = PublicKeyBlob.decode public_key_blob, logger: logger
+          public_key_blob_h = PublicKeyBlob.new(logger: logger).decode public_key_blob
           @publickey = PKey.new logger: logger
           @publickey.set_public_key(public_key_blob_h[:key])
         end
@@ -39,7 +39,7 @@ module HrrRbSsh
             :'public key algorithm name' => self.class::NAME,
             :'key'                       => @publickey.public_key.key_str,
           }
-          PublicKeyBlob.encode public_key_blob_h, logger: logger
+          PublicKeyBlob.new(logger: logger).encode public_key_blob_h
         end
 
         def sign signature_blob
@@ -47,11 +47,11 @@ module HrrRbSsh
             :'public key algorithm name' => self.class::NAME,
             :'signature blob'            => @publickey.sign(signature_blob),
           }
-          Signature.encode signature_h, logger: logger
+          Signature.new(logger: logger).encode signature_h
         end
 
         def verify signature, signature_blob
-          signature_h = Signature.decode signature, logger: logger
+          signature_h = Signature.new(logger: logger).decode signature
           signature_h[:'public key algorithm name'] == self.class::NAME && @publickey.public_key.verify(signature_h[:'signature blob'], signature_blob)
         end
       end

@@ -8,10 +8,8 @@ module HrrRbSsh
   module Algorithm
     class Publickey
       class SshEd25519
-        module OpenSSHPrivateKey
-          class << self
-            include Codable
-          end
+        class OpenSSHPrivateKey
+          include Codable
           DEFINITION = [
             [DataType::String, :'cipher'],
             [DataType::String, :'kdfname'],

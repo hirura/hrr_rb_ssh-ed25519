@@ -50,8 +50,8 @@ module HrrRbSsh
             decoded_key_str = Base64.decode64(key_str[begin_marker.size...-end_marker.size])
             raise Error unless decoded_key_str[0,14] == magic
 
-            private_key_h = OpenSSHPrivateKey.decode decoded_key_str[15..-1], logger: logger
-            private_key_content_h = OpenSSHPrivateKeyContent.decode private_key_h[:'content'], logger: logger
+            private_key_h = OpenSSHPrivateKey.new(logger: logger).decode decoded_key_str[15..-1]
+            private_key_content_h = OpenSSHPrivateKeyContent.new(logger: logger).decode private_key_h[:'content']
             key_pair = private_key_content_h[:'key pair']
 
             ::Ed25519::SigningKey.new(key_pair[0,32])
