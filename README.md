@@ -1,6 +1,6 @@
 # HrrRbSsh::Ed25519
 
-[![Build Status](https://travis-ci.org/hirura/hrr_rb_ssh-ed25519.svg?branch=master)](https://travis-ci.org/hirura/hrr_rb_ssh-ed25519)
+[![Build Status](https://travis-ci.com/hirura/hrr_rb_ssh-ed25519.svg?branch=master)](https://travis-ci.com/hirura/hrr_rb_ssh-ed25519)
 [![Maintainability](https://api.codeclimate.com/v1/badges/07ebfd442f48308b52f6/maintainability)](https://codeclimate.com/github/hirura/hrr_rb_ssh-ed25519/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/07ebfd442f48308b52f6/test_coverage)](https://codeclimate.com/github/hirura/hrr_rb_ssh-ed25519/test_coverage)
 [![Gem Version](https://badge.fury.io/rb/hrr_rb_ssh-ed25519.svg)](https://badge.fury.io/rb/hrr_rb_ssh-ed25519)
