@@ -102,7 +102,7 @@ VdvgRp5bDePxiqzxYUxSAAAACmhycl9yYl9zc2gBAgM=
       let(:message){
         {
           :'session identifier'        => session_id,
-          :'message number'            => HrrRbSsh::Message::SSH_MSG_USERAUTH_REQUEST::VALUE,
+          :'message number'            => HrrRbSsh::Messages::SSH_MSG_USERAUTH_REQUEST::VALUE,
           :'user name'                 => username,
           :'service name'              => "ssh-connection",
           :'method name'               => "publickey",
@@ -115,7 +115,7 @@ VdvgRp5bDePxiqzxYUxSAAAACmhycl9yYl9zc2gBAgM=
       let(:data){
         [
           HrrRbSsh::DataTypes::String.encode(session_id),
-          HrrRbSsh::DataTypes::Byte.encode(HrrRbSsh::Message::SSH_MSG_USERAUTH_REQUEST::VALUE),
+          HrrRbSsh::DataTypes::Byte.encode(HrrRbSsh::Messages::SSH_MSG_USERAUTH_REQUEST::VALUE),
           HrrRbSsh::DataTypes::String.encode(username),
           HrrRbSsh::DataTypes::String.encode("ssh-connection"),
           HrrRbSsh::DataTypes::String.encode("publickey"),
@@ -195,7 +195,7 @@ MC4CAQAwBQYDK2VwBCIEIO8BvFjQCQGGsNbq0c7uh81pvpNhun6uAPTz3lb/cXHA
       let(:message){
         {
           :'session identifier'        => session_id,
-          :'message number'            => HrrRbSsh::Message::SSH_MSG_USERAUTH_REQUEST::VALUE,
+          :'message number'            => HrrRbSsh::Messages::SSH_MSG_USERAUTH_REQUEST::VALUE,
           :'user name'                 => username,
           :'service name'              => "ssh-connection",
           :'method name'               => "publickey",
@@ -208,7 +208,7 @@ MC4CAQAwBQYDK2VwBCIEIO8BvFjQCQGGsNbq0c7uh81pvpNhun6uAPTz3lb/cXHA
       let(:data){
         [
           HrrRbSsh::DataTypes::String.encode(session_id),
-          HrrRbSsh::DataTypes::Byte.encode(HrrRbSsh::Message::SSH_MSG_USERAUTH_REQUEST::VALUE),
+          HrrRbSsh::DataTypes::Byte.encode(HrrRbSsh::Messages::SSH_MSG_USERAUTH_REQUEST::VALUE),
           HrrRbSsh::DataTypes::String.encode(username),
           HrrRbSsh::DataTypes::String.encode("ssh-connection"),
           HrrRbSsh::DataTypes::String.encode("publickey"),
