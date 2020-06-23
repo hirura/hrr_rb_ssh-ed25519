@@ -1,7 +1,6 @@
 # coding: utf-8
 # vim: et ts=2 sw=2
 
-require 'hrr_rb_ssh/data_type'
 require 'hrr_rb_ssh/codable'
 
 module HrrRbSsh
@@ -11,14 +10,14 @@ module HrrRbSsh
         class OpenSSHPrivateKey
           include Codable
           DEFINITION = [
-            [DataType::String, :'cipher'],
-            [DataType::String, :'kdfname'],
-            [DataType::Uint32, :'kdfopts'],
-            [DataType::Uint32, :'number of public keys'],
-            [DataType::Uint32, :'first public key length'],
-            [DataType::String, :'name'],
-            [DataType::String, :'public key'],
-            [DataType::String, :'content'],
+            [DataTypes::String, :'cipher'],
+            [DataTypes::String, :'kdfname'],
+            [DataTypes::Uint32, :'kdfopts'],
+            [DataTypes::Uint32, :'number of public keys'],
+            [DataTypes::Uint32, :'first public key length'],
+            [DataTypes::String, :'name'],
+            [DataTypes::String, :'public key'],
+            [DataTypes::String, :'content'],
           ]
         end
       end

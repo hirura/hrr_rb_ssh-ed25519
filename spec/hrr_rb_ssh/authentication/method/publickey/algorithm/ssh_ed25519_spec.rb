@@ -37,8 +37,8 @@ MCowBQYDK2VwAyEA0xMv7hdAFjv2Q6aLOG9PP0dNXm9qkHGV7WewMgl1pcE=
     }
     let(:public_key_blob){
       [
-        HrrRbSsh::DataType::String.encode(public_key_algorithm_name),
-        HrrRbSsh::DataType::String.encode(public_key.key_str),
+        HrrRbSsh::DataTypes::String.encode(public_key_algorithm_name),
+        HrrRbSsh::DataTypes::String.encode(public_key.key_str),
       ].join
     }
 
@@ -93,8 +93,8 @@ VdvgRp5bDePxiqzxYUxSAAAACmhycl9yYl9zc2gBAgM=
       let(:pkey){ HrrRbSsh::Algorithm::Publickey::SshEd25519::PKey.new private_key_str }
       let(:public_key_blob){
         [
-          HrrRbSsh::DataType::String.encode(name),
-          HrrRbSsh::DataType::String.encode(pkey.public_key.key_str),
+          HrrRbSsh::DataTypes::String.encode(name),
+          HrrRbSsh::DataTypes::String.encode(pkey.public_key.key_str),
         ].join
       }
       let(:session_id){ "session id" }
@@ -114,14 +114,14 @@ VdvgRp5bDePxiqzxYUxSAAAACmhycl9yYl9zc2gBAgM=
       }
       let(:data){
         [
-          HrrRbSsh::DataType::String.encode(session_id),
-          HrrRbSsh::DataType::Byte.encode(HrrRbSsh::Message::SSH_MSG_USERAUTH_REQUEST::VALUE),
-          HrrRbSsh::DataType::String.encode(username),
-          HrrRbSsh::DataType::String.encode("ssh-connection"),
-          HrrRbSsh::DataType::String.encode("publickey"),
-          HrrRbSsh::DataType::Boolean.encode(true),
-          HrrRbSsh::DataType::String.encode(name),
-          HrrRbSsh::DataType::String.encode(public_key_blob),
+          HrrRbSsh::DataTypes::String.encode(session_id),
+          HrrRbSsh::DataTypes::Byte.encode(HrrRbSsh::Message::SSH_MSG_USERAUTH_REQUEST::VALUE),
+          HrrRbSsh::DataTypes::String.encode(username),
+          HrrRbSsh::DataTypes::String.encode("ssh-connection"),
+          HrrRbSsh::DataTypes::String.encode("publickey"),
+          HrrRbSsh::DataTypes::Boolean.encode(true),
+          HrrRbSsh::DataTypes::String.encode(name),
+          HrrRbSsh::DataTypes::String.encode(public_key_blob),
         ].join
       }
 
@@ -131,8 +131,8 @@ VdvgRp5bDePxiqzxYUxSAAAACmhycl9yYl9zc2gBAgM=
         }
         let(:signature){
           [
-            HrrRbSsh::DataType::String.encode(name),
-            HrrRbSsh::DataType::String.encode(signature_blob),
+            HrrRbSsh::DataTypes::String.encode(name),
+            HrrRbSsh::DataTypes::String.encode(signature_blob),
           ].join
         }
 
@@ -147,8 +147,8 @@ VdvgRp5bDePxiqzxYUxSAAAACmhycl9yYl9zc2gBAgM=
         }
         let(:signature){
           [
-            HrrRbSsh::DataType::String.encode("incorrect"),
-            HrrRbSsh::DataType::String.encode(signature_blob),
+            HrrRbSsh::DataTypes::String.encode("incorrect"),
+            HrrRbSsh::DataTypes::String.encode(signature_blob),
           ].join
         }
 
@@ -164,8 +164,8 @@ VdvgRp5bDePxiqzxYUxSAAAACmhycl9yYl9zc2gBAgM=
         let(:incorrect_signature_blob){ "incorrect" + signature_blob }
         let(:signature){
           [
-            HrrRbSsh::DataType::String.encode(name),
-            HrrRbSsh::DataType::String.encode(incorrect_signature_blob),
+            HrrRbSsh::DataTypes::String.encode(name),
+            HrrRbSsh::DataTypes::String.encode(incorrect_signature_blob),
           ].join
         }
 
@@ -186,8 +186,8 @@ MC4CAQAwBQYDK2VwBCIEIO8BvFjQCQGGsNbq0c7uh81pvpNhun6uAPTz3lb/cXHA
       let(:pkey){ HrrRbSsh::Algorithm::Publickey::SshEd25519::PKey.new private_key_str }
       let(:public_key_blob){
         [
-          HrrRbSsh::DataType::String.encode(name),
-          HrrRbSsh::DataType::String.encode(pkey.public_key.key_str),
+          HrrRbSsh::DataTypes::String.encode(name),
+          HrrRbSsh::DataTypes::String.encode(pkey.public_key.key_str),
         ].join
       }
       let(:session_id){ "session id" }
@@ -207,14 +207,14 @@ MC4CAQAwBQYDK2VwBCIEIO8BvFjQCQGGsNbq0c7uh81pvpNhun6uAPTz3lb/cXHA
       }
       let(:data){
         [
-          HrrRbSsh::DataType::String.encode(session_id),
-          HrrRbSsh::DataType::Byte.encode(HrrRbSsh::Message::SSH_MSG_USERAUTH_REQUEST::VALUE),
-          HrrRbSsh::DataType::String.encode(username),
-          HrrRbSsh::DataType::String.encode("ssh-connection"),
-          HrrRbSsh::DataType::String.encode("publickey"),
-          HrrRbSsh::DataType::Boolean.encode(true),
-          HrrRbSsh::DataType::String.encode(name),
-          HrrRbSsh::DataType::String.encode(public_key_blob),
+          HrrRbSsh::DataTypes::String.encode(session_id),
+          HrrRbSsh::DataTypes::Byte.encode(HrrRbSsh::Message::SSH_MSG_USERAUTH_REQUEST::VALUE),
+          HrrRbSsh::DataTypes::String.encode(username),
+          HrrRbSsh::DataTypes::String.encode("ssh-connection"),
+          HrrRbSsh::DataTypes::String.encode("publickey"),
+          HrrRbSsh::DataTypes::Boolean.encode(true),
+          HrrRbSsh::DataTypes::String.encode(name),
+          HrrRbSsh::DataTypes::String.encode(public_key_blob),
         ].join
       }
 
@@ -224,8 +224,8 @@ MC4CAQAwBQYDK2VwBCIEIO8BvFjQCQGGsNbq0c7uh81pvpNhun6uAPTz3lb/cXHA
         }
         let(:signature){
           [
-            HrrRbSsh::DataType::String.encode(name),
-            HrrRbSsh::DataType::String.encode(signature_blob),
+            HrrRbSsh::DataTypes::String.encode(name),
+            HrrRbSsh::DataTypes::String.encode(signature_blob),
           ].join
         }
 
@@ -240,8 +240,8 @@ MC4CAQAwBQYDK2VwBCIEIO8BvFjQCQGGsNbq0c7uh81pvpNhun6uAPTz3lb/cXHA
         }
         let(:signature){
           [
-            HrrRbSsh::DataType::String.encode("incorrect"),
-            HrrRbSsh::DataType::String.encode(signature_blob),
+            HrrRbSsh::DataTypes::String.encode("incorrect"),
+            HrrRbSsh::DataTypes::String.encode(signature_blob),
           ].join
         }
 
@@ -257,8 +257,8 @@ MC4CAQAwBQYDK2VwBCIEIO8BvFjQCQGGsNbq0c7uh81pvpNhun6uAPTz3lb/cXHA
         let(:incorrect_signature_blob){ "incorrect" + signature_blob }
         let(:signature){
           [
-            HrrRbSsh::DataType::String.encode(name),
-            HrrRbSsh::DataType::String.encode(incorrect_signature_blob),
+            HrrRbSsh::DataTypes::String.encode(name),
+            HrrRbSsh::DataTypes::String.encode(incorrect_signature_blob),
           ].join
         }
 
