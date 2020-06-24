@@ -1,6 +1,3 @@
-# coding: utf-8
-# vim: et ts=2 sw=2
-
 require_relative 'lib/hrr_rb_ssh/ed25519/version'
 
 Gem::Specification.new do |spec|

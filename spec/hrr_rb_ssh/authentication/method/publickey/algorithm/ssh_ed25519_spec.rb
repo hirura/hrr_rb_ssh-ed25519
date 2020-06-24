@@ -1,6 +1,3 @@
-# coding: utf-8
-# vim: et ts=2 sw=2
-
 RSpec.describe HrrRbSsh::Authentication::Method::Publickey::Algorithm::SshEd25519 do
   let(:name){ 'ssh-ed25519' }
   let(:algorithm){ described_class.new }

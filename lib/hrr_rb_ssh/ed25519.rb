@@ -1,6 +1,3 @@
-# coding: utf-8
-# vim: et ts=2 sw=2
-
 require 'ed25519'
 require "hrr_rb_ssh"
 require "hrr_rb_ssh/ed25519/version"

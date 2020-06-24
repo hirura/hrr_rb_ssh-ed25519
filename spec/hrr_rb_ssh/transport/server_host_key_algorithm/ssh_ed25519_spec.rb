@@ -1,6 +1,3 @@
-# coding: utf-8
-# vim: et ts=2 sw=2
-
 RSpec.describe HrrRbSsh::Transport::ServerHostKeyAlgorithm::SshEd25519 do
   let(:name){ 'ssh-ed25519' }
 
