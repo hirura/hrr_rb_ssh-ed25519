@@ -1,4 +1,3 @@
-require 'stringio'
 require 'base64'
 require 'ed25519'
 require 'hrr_rb_ssh/loggable'
