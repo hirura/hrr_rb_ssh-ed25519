@@ -1,6 +1,3 @@
-require 'base64'
-require 'ed25519'
-
 module HrrRbSsh
   module Algorithm
     class Publickey
